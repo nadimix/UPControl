@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns_wicket="http://wicket.apache.org">
+<link
+	href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css"
+	rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="src/main/webapp/assets/ico/favicon.png">
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+<title>UPControl Register Page</title>
+
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
+<script src="src/main/webapp/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootbox.min.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="src/main/webapp/css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="src/main/webapp/css/signin.css" rel="stylesheet">
+
+<script>
+	$(function() {
+		$("#datepicker").datepicker({
+			dateFormat : 'dd/mm/yy'
+
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="span12">
+		<h2 class="form-signin-heading">Welcome to UPControl Register
+			Page</h2>
+	</div>
+
+	<form wicket:id="formid" class="form-horizontal well span7" id="myform">
+
+		<div class="span3">
+			<label class="label label-important"><b> Personal Data</b></label>
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Write your UPControl ID:</b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="username" class="span3" type="text" id="id"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Write your name: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="firstname" class="span3" type="text" id="name"
+				placeholder="Not Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Write your last name: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="lastname" class="span3" type="text" id="lastname"
+				placeholder="Not Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Write your email address: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="email" class="span3" type="text" id="email"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Write your password twice: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="password1" class="span3" type="password" id="pass1"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="password2" class="span3" type="password" id="pass2"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Insert your birthate: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="date" class="span3" type="text" id="datepicker">
+		</div>
+		<br></br>
+
+
+		<!-- Esto y la country luego ira con GoogleMaps -->
+		<div class="span3">
+			<label><b> Insert your Country: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="country" class="span3" type="text" id="country"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span3">
+			<label><b> Insert your city: </b></label>
+		</div>
+		<div class="span3">
+			<input wicket:id="city" class="span3" type="text" id="city"
+				placeholder="Mandatory field">
+		</div>
+		<br></br>
+
+		<div class="span6">
+			<div class="pull-right">
+				<input type="Submit" value="Create Account" class="btn btn-primary"
+					id="boton" />
+			</div>
+		</div>
+		<div class="span7">
+			<span wicket:id="errorMsg" />
+		</div>
+	</form>
+
+</body>
+</html>

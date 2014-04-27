@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html xmlns_wicket="http://wicket.apache.org">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<title>UPControl</title>
+<link href="css/navbar.css" rel="stylesheet">
+<script
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script type="text/javascript" src="js/geolocalization_index.js"></script>
+<script type="text/javascript" src="js/api.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+
+</head>
+
+<body>
+
+	<!-- EMPIEZA NAVBAR -->
+	<nav class=" nav navbar navbar-fixed-top navbar-inverse"
+		role="navigation">
+		<div>
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a
+						class="dropdown-toggle branch label-info" data-toggle="dropdown"
+						href="#">UPControl<span class="caret"></span></a>
+						<ul class="dropdown-menu navbar-nav navbar-inverse">
+							<li><a id="about" onclick="prueba()" href="#"> About us</a></li>
+							<script>
+								function prueba() {
+
+									bootbox
+											.alert("Somos grupo de estudiantes del Grado de telematica. <br/> UPControl es nuestro proyecto final de EA.");
+
+								}
+							</script>
+							<li><a id="about" onclick="prueba2()" href="#">
+									Components</a></li>
+							<script>
+								function prueba2() {
+
+									bootbox
+											.alert("******* COMPONENTES ******** <br/> Nadim el Taha <br/> Juanfran Garcia <br/> Anna Andujar<br/> Ramon Quesada <br/> Sergi Mellado <br/> Raul Garcia <br/>");
+
+								}
+							</script>
+							<li><a id="about" onclick="prueba3()" href="#"> Services</a></li>
+							<script>
+								function prueba3() {
+
+									bootbox
+											.alert("Ofrecemos un servicio de calculo de rutas, control de localizacion de radares, puntos negros, etc. ");
+
+								}
+							</script>
+						</ul></li>
+
+					<li><a href="#" class="glyphicon glyphicon-screenshot"
+						wicket:id="Index"> HOME</a></li>
+
+					<li><a href="#" class="glyphicon glyphicon-user"
+						wicket:id="UserProfile"> My Profile</a></li>
+
+					<li><a href="#" class="glyphicon glyphicon-road"
+						wicket:id="CreateRoute"> Create routes</a></li>
+
+					<li><a href="#" class="glyphicon glyphicon-plus"
+						wicket:id="AddHotSpot"> Add HotSpots</a></li>
+
+
+					<li><a class="glyphicon glyphicon-thumbs-up"
+						href="https://twitter.com/control_up" data-show-count="false"
+						data-size="large" data-dnt="true"> Follow us on Twitter<span></span>
+
+							<script>
+								!function(d, s, id) {
+									var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+											.test(d.location) ? 'http'
+											: 'https';
+									if (!d.getElementById(id)) {
+										js = d.createElement(s);
+										js.id = id;
+										js.src = p
+												+ '://platform.twitter.com/widgets.js';
+										fjs.parentNode.insertBefore(js, fjs);
+									}
+								}(document, 'script', 'twitter-wjs');
+							</script>
+					</a></li>
+
+					<li class="dropdown"><a
+						class="dropdown-toggle glyphicon glyphicon-thumbs-up"
+						data-toggle="dropdown" href="#"> Facebook <span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu navbar-nav navbar-inverse">
+
+							<li><a href="#"><iframe
+										src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/upcontrolg1;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80"
+										scrolling="no" frameborder="0"
+										style="border: none; overflow: hidden; height: 80px;"
+										allowTransparency="true"></iframe> </a></li>
+						</ul></li>
+
+					<li><a href="#" class="glyphicon glyphicon-log-out"
+						wicket:id="logout"> Logout</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	<!-- ACABA NAVBAR -->
+
+	<div>
+		<br></br>
+		<div class="row">
+
+			<div class="col-lg-9">
+
+				<form class="form-horizontal well span12" id="myform">
+
+					<div id="map-canvas" style="width: 100%; height: 600px"></div>
+				</form>
+			</div>
+			<div class="col-lg-3">
+				<a class="twitter-timeline" href="https://twitter.com/control_up"
+					data-widget-id="391510836058935296">Tweets por @control_up </a>
+
+				<script>
+					!function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+								.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + "://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, "script", "twitter-wjs");
+				</script>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="js/jquery-1.8.2.js"></script>
+
+	<script src="js/bootbox.min.js"></script>
+	<script
+		src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="js/bootstrap-transitions.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.dropdown-toggle').dropdown();
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('.carousel').carousel()
+			interval: 3000
+		});
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns_wicket="http://wicket.apache.org" >
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0	/css/bootstrap.min.css">
+<title>UPControl</title>
+<link href="css/navbar.css" rel="stylesheet">
+<link href="css/signin.css" rel="stylesheet">
+<script type="text/javascript" src="js/login_facebook.js"></script>
+</head>
+
+<body >
+<nav class=" nav navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<div>
+			<div class="container">
+				<ul class="nav navbar-nav">
+				<li class="dropdown"><a class="dropdown-toggle branch label-info" data-toggle="dropdown"
+					href="#">UPControl<span class="caret"></span></a>
+					<ul class="dropdown-menu navbar-nav navbar-inverse">
+						<li><a id="about" onclick="prueba()" href="#"> About us</a></li>
+						<script>	
+          		 		function prueba() {
+				
+	          			bootbox.alert("Somos grupo de estudiantes del Grado de telematica. <br/> UPControl es nuestro proyecto final de EA.");
+	          			
+						}
+         				</script>
+						<li><a id="about" onclick="prueba2()"  href="#"> Components</a></li>
+						<script>	
+          		 		function prueba2() {
+				
+	          			bootbox.alert("******* COMPONENTES ******** <br/> Nadim el Taha <br/> Juanfran Garcia <br/> Anna Andujar<br/> Ramon Quesada <br/> Sergi Mellado <br/> Raul Garcia <br/>");
+	          			
+						}
+         				</script>
+						<li><a id="about" onclick="prueba3()"  href="#"> Services</a></li>
+						<script>	
+          		 		function prueba3() {
+				
+	          			bootbox.alert("Ofrecemos un servicio de calculo de rutas, control de localizacion de radares, puntos negros, etc. ");
+	          			
+						}
+         				</script>
+					</ul></li>
+				
+			</ul>
+			
+		</div>
+		</div>
+</nav>
+
+<div>
+<br></br>
+<form  class="form-horizontal well span11" wicket:id="formid" id="myform1" >
+	
+		<div class="row">
+		<div>
+        <div class="col-lg-3">
+        
+        		<span class="label label-info">Username</span>
+				<input wicket:id="usernameid" type="text" class="form-control" placeholder="Username"autofocus></input> 
+				
+				<span class="label label-info">Password</span>
+				<input wicket:id="passwordid" type="password" class="form-control" placeholder="Password"></input>		
+		<div>	<span wicket:id="errorMsg"/></div>
+				<br></br>
+				
+				
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Login" >
+				<!--  <button wicket:id="btn_signin"class="btn btn-lg btn-primary btn-block" type="submit">
+				Sign in <img src="images/logo-nav.gif"></button>-->
+				
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					Sign in with Twitter <img src="images/twitter.png"></button>
+
+				<fb:login-button autologoutlink="true" perms="email,user_birthday,status_update,publish_stream" class="btn btn-lg btn-primary btn-block" type="submit" id="about" onclick="login()">
+				Sign in with Facebook <img src="images/facebook.png"></fb:login-button>
+								
+				
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					Sign in with Google + <img src="images/google.png"></button>
+				<button  class="btn btn-lg btn-success btn-block" wicket:id="register">Register now
+				</button>
+
+				</div>		
+				 
+    	<div class="col-lg-9" >
+    	
+      	<div id="myCarousel" class="carousel slide">
+      	
+		  <div class="carousel-inner">
+		  
+    	<div class="active item"><img src="images/carretera1.jpg"></div>
+    	<div class="item"><img src="images/radar1.jpg"  ></div>
+    	<div class="item"><img src="images/puntos-negros.jpg"  ></div>
+		<div class="item"><img src="images/social.jpg"></div>
+  		
+  		</div>
+  
+ 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		
+		</div>
+		
+		</div>
+			
+			</div>
+			<p>&nbsp;</p>
+			<div>
+			
+			
+			</div>
+			
+			
+			</div>
+
+	</form>
+		<div class="col-lg-1">	<iframe
+										src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Upcontrol/237907056377970?fref=ts;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80"
+										scrolling="no" frameborder="0"
+										style="border: none; overflow: hidden; height: 80px;"
+		
+										allowTransparency="true"></iframe>
+										</div>
+	</div>
+	
+	<div id="fb-root"></div>
+	<script type="text/javascript">
+
+	  window.fbAsyncInit = function() {
+FB.init({appId: '645396755505974', status: true, cookie: true, xfbml: true});
+
+/* All the events registered */
+FB.Event.subscribe('auth.login', function(response) {
+    // do something with response
+    login();
+    getparams();
+});
+FB.Event.subscribe('auth.logout', function(response) {
+    // do something with response
+    logout();
+});
+};
+(function() {
+var e = document.createElement('script');
+e.type = 'text/javascript';
+e.src = document.location.protocol +
+    '//connect.facebook.net/en_US/all.js';
+e.async = true;
+document.getElementById('fb-root').appendChild(e);
+}());
+
+function login(){
+FB.api('/me', function(response) {
+    document.getElementById('login').style.display = "block";
+    document.getElementById('login').innerHTML = response.name + " succsessfully logged in!";
+});
+}
+function logout(){
+document.getElementById('login').style.display = "none";
+document.getElementById('login').innerHTML = response.name + " succsessfully logged out!";
+}
+
+function getparams() {
+	FB
+	.api(
+			'/me',
+			function(response) {
+				var query = FB.Data
+						.query(
+								'select first_name, last_name, email, pic_square from user where uid={0}',
+								response.id);
+				query
+						.wait(function(rows) {
+
+							bootbox.dialog({
+								message: '<br><img src="'+rows[0].pic_square+'"/></br><br>Nombre: '+rows[0].first_name +'</br><br>Apellido: '+rows[0].last_name+'</br><br>Email: '+rows[0].email+'</br>',
+								title: "Sesion de facebook correcta!",
+								buttons: {
+								main: {
+								label: 'Aceptar',
+								className: "btn-primary",
+								callback: function() {
+									window.location.href = "http://localhost:8080/UPControl_w/wicket/bookmarkable/wicket.Index2";
+								}
+								},
+								danger: {
+									label: "Cancelar",
+									className: "btn-primary",
+									callback: function() {
+										window.location.href = "";
+									}
+									}
+								}
+								});
+							
+						});
+			});
+}
+
+
+
+      </script>
+	
+	
+	
+<script src="js/jquery-1.8.2.js"></script>
+
+	<script src="js/bootbox.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="js/bootstrap-transitions.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+   </script> 
+   <script>
+   		 $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 3000 
+        });
+       
+    });
+</script>
+</body>
+</html>
